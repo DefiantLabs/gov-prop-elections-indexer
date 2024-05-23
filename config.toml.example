@@ -1,0 +1,57 @@
+[log]
+level = "info"
+path = "./log.txt"
+pretty = true
+
+#App configuration values
+[base]
+start-block = 20286969
+end-block = -1
+throttling = 6.00
+block-timer = 10000
+wait-for-chain = false
+wait-for-chain-delay = 10
+index-transactions = true
+exit-when-caught-up = true
+index-block-events = false
+dry = false
+rpc-workers = 1
+reindex = false
+reattempt-failed-blocks = false
+
+#Lens config options
+[probe]
+rpc = ""
+account-prefix = "cosmos"
+chain-id = "cosmoshub-4"
+chain-name = "CosmosHub"
+
+[flags]
+index-tx-message-raw=false
+index-message-events=false
+
+#postgresql
+[database]
+host = ""
+port = ""
+database = ""
+user = ""
+password = ""
+log-level = ""
+
+[lcd]
+url=""
+
+[proposals]
+proposal-allow-list =""
+clyde-proposal=0 # Alternatively set these to non-zero values to load
+grace-proposal=0
+matt-proposal=0
+
+[block-watcher]
+staking-update-block-threshold=100 # every 100 blocks, run the staking update
+staking-update-concurrent-requests=5 # execute 5 requests in parallel per chunk, tune this to how much you want to bash the node at once
+staking-update-delegator-limit=100 # how many old delegators to make new snapshots for
+staking-update-error-limit=0.5 # how many failures to tolerator, 0 for ignoring failures and continuing updates
+staking-update-block-throttle=2 # how much time (in milliseconds) to throttle between request chunks
+proposal-status-update-threshold=100 # every 100 blocks, calculate the current proposal status based on the indexed dataset

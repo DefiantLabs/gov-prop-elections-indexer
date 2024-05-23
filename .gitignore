@@ -1,0 +1,6 @@
+__debug*
+config.toml
+.vscode
+.env
+*.log
+gov-prop-elections-indexer
